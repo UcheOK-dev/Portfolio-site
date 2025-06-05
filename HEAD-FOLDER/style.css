@@ -1,0 +1,165 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 15px 20px;
+  color: white;
+  height: 90px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 30px;
+  transition: background 0.1s;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+/* Active/Target Link */
+.nav-links .target {
+  background-color: #007bff;
+}
+
+/* Hamburger Button (Hidden by default) */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Close Button (Hidden on desktop) */
+.nav-links .close-btn {
+  font-size: 28px;
+  color: white;
+  text-align: right;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: none;
+}
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 10px;
+  flex-wrap: wrap;
+}
+img{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 250px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.introduction-text {
+  display: inline-block; /* <-- ADD THIS */
+  text-align: center;
+  font-size: 40px;
+  color: #333;
+  margin-top: 20px;
+  animation: slideDown 1.0s ease-out;
+}
+
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-80px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+#typing-animation{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+#typing-animation::after{
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -250px; /* Off-screen to the right */
+    height: 100vh;
+    width: 250px;
+    background-color: #333;
+    padding-top: 10px;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    right: 0; /* Slides in */
+  }
+
+  .nav-links li {
+    margin: 15px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links .close-btn {
+    display: block;
+  }
+}
