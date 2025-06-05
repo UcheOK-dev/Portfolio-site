@@ -403,7 +403,7 @@
         padding: 25px;
       }
       .img-container {
-        padding: 20px 0 0 0;
+        padding: 30px;
         max-width: 100%;
         border-radius: 12px;
         gap: 16px;
@@ -421,23 +421,28 @@
       body {
         padding: 20px;
       }
-  .button-1,
-  .button-2,
-  .img-container .button-1,
-  .img-container .button-2 {
+      .img-container{
+        padding-bottom: 10px;
+      }
+  .img-container button{
     display: block;
     width: 100%;
     min-width: 0;
     max-width: 100%;
     font-size: 1rem;
-    padding: 20px;
-    margin: 10px;
+    padding: 14px 18px;   /* Add horizontal padding for a smoother look */
+    margin: 10px 0 0 0;
     border-radius: 7px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     text-align: center;
     font-weight: 600;
     letter-spacing: 0.5px;
-} 
+    border: none !important;
+    outline: none !important;
+    background: inherit;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
 
 .img-container a {
     text-decoration: none !important;
@@ -453,7 +458,6 @@
       #typing-animation { font-size: 0.92rem; min-height: 20px; }
       .img-container .button-1, .img-container .button-2 {
         font-size: 0.92rem;
-        padding: 7px 0;
         min-width: 70px;
         max-width: 98vw;
         width: 100%;
