@@ -634,18 +634,21 @@
       });
 
       // Highlight nav based on current URL (works for / and /index.html)
-      function highlightNav() {
-        let currentPage = window.location.pathname.split('/').pop().toLowerCase();
-        if (!currentPage || currentPage === "" || currentPage === "/") currentPage = "index.html";
-        links.forEach(link => {
-          let hrefPage = link.getAttribute('href').split('/').pop().toLowerCase();
-          if (hrefPage === currentPage) {
-            link.classList.add('target');
-          } else {
-            link.classList.remove('target');
-          }
-        });
-      }
+      // ...existing code...
+function highlightNav() {
+  let currentPage = window.location.pathname.split('/').pop().toLowerCase();
+  if (!currentPage || currentPage === "" || currentPage === "/") currentPage = "index.html";
+  document.querySelectorAll('.nav-link').forEach(link => {
+    let hrefPage = link.getAttribute('href').split('/').pop().toLowerCase();
+    // Also highlight if on root (/) and link is index.html
+    if (hrefPage === currentPage || (currentPage === "index.html" && (hrefPage === "" || hrefPage === "/"))) {
+      link.classList.add('target');
+    } else {
+      link.classList.remove('target');
+    }
+  });
+}
+// ...existing code...
       highlightNav();
 
       // Update nav highlight on popstate (browser back/forward)
